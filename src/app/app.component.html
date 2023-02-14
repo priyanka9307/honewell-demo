@@ -1,0 +1,58 @@
+<h3>Q1. Continuous Sum Query</h3>
+
+<label for="quantity">No. of Beggars (between 1 and 2*10<sup>5</sup>): </label
+><strong> A </strong>
+<input
+  type="number"
+  [(ngModel)]="A"
+  id="quantity"
+  name="quantity"
+  min="1"
+  max="200000"
+/>
+<br />
+<br />
+<label> Add Devotee : </label><strong> B </strong>
+<table style="width:10%">
+  <tr>
+    <th>L</th>
+    <th>R</th>
+    <th>P</th>
+  </tr>
+  <tr>
+    <td><input type="number" [(ngModel)]="L" /></td>
+    <td><input type="number" [(ngModel)]="R" /></td>
+    <td><input type="number" [(ngModel)]="P" /></td>
+    <td><button type="button" (click)="addDevotee()">Add</button></td>
+  </tr>
+</table>
+<h4>Devotee Details</h4>
+<button type="button" (click)="restDevoteeList()">Clear All</button>
+<br />
+<table>
+  <tr>
+    <th style="width: 100px">L</th>
+    <th style="width: 100px">R</th>
+    <th style="width: 100px">P</th>
+  </tr>
+  <ng-container *ngFor="let d of B">
+    <tr>
+      <td style="width: 100px">{{ d[0] }}</td>
+      <td style="width: 100px">{{ d[1] }}</td>
+      <td style="width: 100px">{{ d[2] }}</td>
+    </tr>
+  </ng-container>
+</table>
+
+<br />
+<br />
+<label for="quantity"> Calculate Pot Amount : </label>
+
+<button type="button" (click)="calcuateSum()">
+  <strong> Calculate </strong>
+</button>
+<ul>
+  <li *ngFor="let pot of A_pot; index as i">
+    Beggar {{ i + 1 }} amount {{ pot }}
+  </li>
+</ul>

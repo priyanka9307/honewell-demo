@@ -1,0 +1,7 @@
+/* Add application styles & imports to this file! */
+table,
+th,
+td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
